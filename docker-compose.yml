@@ -1,0 +1,12 @@
+services:
+  teamapp:
+    image: teamappspa
+    container_name: teamappspa
+    restart: unless-stopped
+    ports:
+      - "${EXPOSE_PORT:-3000}:3000"
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      PORT: "3000"
+      NUXT_PUBLIC_BASE_URL: ${BASE_URL}
